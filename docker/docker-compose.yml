@@ -1,0 +1,10 @@
+services:
+  torch-points3d:
+    build: . # build from dockerfile
+    container_name: tp3 # set name for container
+    stdin_open: true # enable -i
+    tty: true # enable -t
+    ports: # open ports
+      - 8888:8888
+    volumes: # add volume for source code folder to code folder inside container
+      - ../code:/workspace/code
